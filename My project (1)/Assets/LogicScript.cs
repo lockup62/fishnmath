@@ -51,7 +51,7 @@ public class LogicScript : MonoBehaviour
 
     public void ShowAdditionLevel(int levelIndex)
     {
-        // Check if the index is within the bounds of the levels array
+        //check if the index is within the bounds of the levels array
         if (levelIndex >= 0 && levelIndex < additionlevelObjects.Length)
         {
             // Deactivate all levels
@@ -70,7 +70,7 @@ public class LogicScript : MonoBehaviour
     }
     public void ShowSubtractionLevel(int levelIndex)
     {
-        // Check if the index is within the bounds of the levels array
+        //Check if the index is within the bounds of the levels array
         if (levelIndex >= 0 && levelIndex < subtractionlevelObjects.Length)
         {
             // Deactivate all levels
@@ -92,7 +92,7 @@ public class LogicScript : MonoBehaviour
         // Check if the index is within the bounds of the levels array
         if (levelIndex >= 0 && levelIndex < multilevelObjects.Length)
         {
-            // Deactivate all levels
+            //Deactivating all of the levels since only multiplkcation should be showing
             for (int i = 0; i < multilevelObjects.Length; i++)
             {
                 multilevelObjects[i].SetActive(i == levelIndex);
@@ -111,7 +111,7 @@ public class LogicScript : MonoBehaviour
         // Check if the index is within the bounds of the levels array
         if (levelIndex >= 0 && levelIndex < divlevelObjects.Length)
         {
-            // Deactivate all levels
+            //deactivating all of the levels again
             for (int i = 0; i < divlevelObjects.Length; i++)
             {
                 divlevelObjects[i].SetActive(i == levelIndex);

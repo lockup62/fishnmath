@@ -5,7 +5,7 @@ public class FishSpawner : MonoBehaviour
     public GameObject fishPrefab;
     public Sprite[] fishSprites;
     public float fishSpeed = 2f;
-
+    public GameObject QuestionDisplay;
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -34,8 +34,9 @@ public class FishSpawner : MonoBehaviour
             //Check if a fishmanger clone was found
             if (topmostFish != null && Time.timeScale != 0f)
             {
+
                 Time.timeScale = 0f;
-                //Destroy the fishmanager(clone) on top 
+                QuestionDisplay.SetActive(true);
                 Destroy(topmostFish);
             }
         }
