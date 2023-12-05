@@ -28,14 +28,14 @@ public class AdditionLevelController : MonoBehaviour
         }
     }
 
-    void GenerateRandomNumbers()
+    public void GenerateRandomNumbers()
     {
         randomNum1 = Random.Range(0, 11);
         randomNum2 = Random.Range(0, 11);
         correctSum = randomNum1 + randomNum2;
     }
 
-    void SetRandomButtonPositions()
+    public void SetRandomButtonPositions()
     {
         //Creating an array of the positions
         Vector2[] positions = new Vector2[]
@@ -57,13 +57,13 @@ public class AdditionLevelController : MonoBehaviour
         }
     }
 
-    void SetButtonPosition(Button button, Vector2 position)
+   public void SetButtonPosition(Button button, Vector2 position)
     {
         RectTransform rectTransform = button.GetComponent<RectTransform>();
         rectTransform.anchoredPosition = position;
     }
 
-    void UpdateTextFields()
+    public void UpdateTextFields()
     {
         randomNum1Text.text = randomNum1.ToString();
         randomNum2Text.text = randomNum2.ToString();
@@ -99,7 +99,7 @@ public class AdditionLevelController : MonoBehaviour
     }
 
     //Fisher-Yates shuffle algorithm
-    void ShuffleArray(Vector2[] array)
+    public void ShuffleArray(Vector2[] array)
     {
         int n = array.Length;
         for (int i = n - 1; i > 0; i--)
