@@ -17,7 +17,7 @@ public class LogicScript : MonoBehaviour
     public GameObject[] subtractionlevelObjects;
     public GameObject[] multilevelObjects;
     public GameObject[] divlevelObjects;
-
+    public GameObject statsScreen;
 
     public void toggleMap()
     {

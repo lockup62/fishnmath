@@ -1,11 +1,12 @@
 using UnityEngine;
-
+using TMPro;
 public class FishSpawner : MonoBehaviour
 {
     public GameObject fishPrefab;
     public Sprite[] fishSprites;
     public float fishSpeed = 2f;
     public GameObject QuestionDisplay;
+    public TextMeshProUGUI incorrect;
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -38,6 +39,7 @@ public class FishSpawner : MonoBehaviour
                 Time.timeScale = 0f;
                 QuestionDisplay.SetActive(true);
                 Destroy(topmostFish);
+                incorrect.enabled = false;
             }
         }
     }

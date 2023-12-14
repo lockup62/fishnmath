@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class AdditionLevelController : MonoBehaviour
+public class MultiLevelController : MonoBehaviour
 {
     public TextMeshProUGUI randomNum1Text;
     public TextMeshProUGUI randomNum2Text;
@@ -10,28 +10,28 @@ public class AdditionLevelController : MonoBehaviour
     public TextMeshProUGUI correctText;
     public TextMeshProUGUI[] incorrectText;
 
-    public Button correctSumButton;
-    public Button[] incorrectSumButton;
+    public Button correctMulButton;
+    public Button[] incorrectMulButton;
     private int randomNum1;
     private int randomNum2;
-    private int correctSum;
+    private int correctMul;
     void Start()
     {
         GenerateRandomNumbers();
         SetRandomButtonPositions();
         UpdateTextFields();
 
-    
+
     }
 
-    private void GenerateRandomNumbers()
+    public void GenerateRandomNumbers()
     {
         randomNum1 = Random.Range(0, 11);
         randomNum2 = Random.Range(0, 11);
-        correctSum = randomNum1 + randomNum2;
+        correctMul = randomNum1 * randomNum2;
     }
 
-    private void SetRandomButtonPositions()
+    public void SetRandomButtonPositions()
     {
         //Creating an array of the positions
         Vector2[] positions = new Vector2[]
@@ -46,34 +46,34 @@ public class AdditionLevelController : MonoBehaviour
         ShuffleArray(positions);
 
         //Assigning each button to a shuffled position
-        SetButtonPosition(correctSumButton, positions[0]);
-        for (int i = 0; i <incorrectSumButton.Length; i++)
+        SetButtonPosition(correctMulButton, positions[0]);
+        for (int i = 0; i < incorrectMulButton.Length; i++)
         {
-            SetButtonPosition(incorrectSumButton[i], positions[i + 1]);
+            SetButtonPosition(incorrectMulButton[i], positions[i + 1]);
         }
     }
 
-   private void SetButtonPosition(Button button, Vector2 position)
+    public void SetButtonPosition(Button button, Vector2 position)
     {
         RectTransform rectTransform = button.GetComponent<RectTransform>();
         rectTransform.anchoredPosition = position;
     }
 
-    private void UpdateTextFields()
+    public void UpdateTextFields()
     {
         randomNum1Text.text = randomNum1.ToString();
         randomNum2Text.text = randomNum2.ToString();
 
-        correctText.text = correctSum.ToString();
+        correctText.text = correctMul.ToString();
         for (int i = 0; i <= incorrectText.Length; i++)
         {
-            int x = Random.Range(0, 21);
+            int x = Random.Range(0, 110);
 
 
 
-            while (x == correctSum)
+            while (x == correctMul)
             {
-                x=Random.Range(1, 21);
+                x = Random.Range(0, 110);
             }
 
 
@@ -81,21 +81,13 @@ public class AdditionLevelController : MonoBehaviour
 
             incorrectText[i].text = x.ToString();
         }
-     }
-    
-
-    void OnCorrectSumButtonClick()
-    {
-        // will do later
     }
 
-    void OnIncorrectSumButtonClick()
-    {
-        // will do later
-    }
+
+
 
     //Fisher-Yates shuffle algorithm
-    private void ShuffleArray(Vector2[] array)
+    public void ShuffleArray(Vector2[] array)
     {
         int n = array.Length;
         for (int i = n - 1; i > 0; i--)
