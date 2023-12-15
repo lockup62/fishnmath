@@ -58,7 +58,7 @@ public class MultiLevelController : MonoBehaviour
         RectTransform rectTransform = button.GetComponent<RectTransform>();
         rectTransform.anchoredPosition = position;
     }
-
+    //updating the text to be correct
     public void UpdateTextFields()
     {
         randomNum1Text.text = randomNum1.ToString();
@@ -86,7 +86,7 @@ public class MultiLevelController : MonoBehaviour
 
 
 
-    //Fisher-Yates shuffle algorithm
+    //Fisher-Yates shuffle algorithm that i found
     public void ShuffleArray(Vector2[] array)
     {
         int n = array.Length;

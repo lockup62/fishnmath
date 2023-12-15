@@ -18,7 +18,8 @@ public class LogicScript : MonoBehaviour
     public GameObject[] multilevelObjects;
     public GameObject[] divlevelObjects;
     public GameObject statsScreen;
-
+    
+  
     public void toggleMap()
     {
         mapSelection.SetActive(true);

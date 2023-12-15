@@ -65,7 +65,7 @@ public class AdditionLevelController : MonoBehaviour
         randomNum2Text.text = randomNum2.ToString();
 
         correctText.text = correctSum.ToString();
-        for (int i = 0; i <= incorrectText.Length; i++)
+        for (int i = 0; i < incorrectText.Length; i++)
         {
             int x = Random.Range(0, 21);
 

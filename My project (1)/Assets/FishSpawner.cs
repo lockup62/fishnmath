@@ -66,7 +66,7 @@ public class FishSpawner : MonoBehaviour
             }
         }
     }
-
+    //spawning fish
     public void SpawnFish()
     {
         for (int i = 0; i < 10; i++)
@@ -83,11 +83,12 @@ public class FishSpawner : MonoBehaviour
 
             // RigidBody2
             Rigidbody2D fishRigidbody = fish.AddComponent<Rigidbody2D>();
-            fishRigidbody.gravityScale = 0; //No gravity
-            fishRigidbody.freezeRotation = true; //Freeze rotation
+            fishRigidbody.gravityScale = 0; 
+            fishRigidbody.freezeRotation = true; 
 
             BoxCollider2D fishCollider = fish.AddComponent<BoxCollider2D>();
             fishCollider.size = new Vector2(5.9f, 2.46f);
         }
     }
+ 
 }
